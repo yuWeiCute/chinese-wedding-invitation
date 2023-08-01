@@ -1,44 +1,47 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-
-import { About, Footer, Header, Skills, Testimonial, Work, LoadingPage } from './container';
-import { Navbar } from './components';
+import React, { useEffect, useState, lazy, Suspense } from 'react';
+import LoadingPage from './container/LoadingPage/LoadingPage';
 import './App.scss';
+
+// 使用lazy()包裹主页面组件，实现懒加载
+const LazyMainPage = lazy(() => import('./container/MainPage'));
 
 const App = () => {
   const [loading, setLoading] = useState(true);
-  // 模拟加载过程，这里使用useEffect来模拟加载完成后的效果
+  const [loadingProgress, setLoadingProgress] = useState(0); // 初始进度为0
+
   useEffect(() => {
-    // 模拟加载过程，1秒后设置loading为false，表示加载完成
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000);
+    // 模拟加载过程，这里可以根据真实的异步加载过程来设置loading状态和加载进度
+    const totalSteps = 100; // 总步数，可以根据实际情况调整
+    let currentStep = 0;
+
+    const timer = setInterval(() => {
+      currentStep += 2;
+      setLoadingProgress((currentStep / totalSteps) * 100);
+
+      if (currentStep === totalSteps) {
+        // 加载完成后，设置loading状态为false
+        setLoading(false);
+        clearInterval(timer);
+      }
+    }, 50); // 50ms模拟一步加载
 
     // 清除计时器
-    return () => clearTimeout(timer);
+    return () => clearInterval(timer);
   }, []);
-  if (loading) {
-    return <LoadingPage />;
-  }
 
-  // 加载完成后显示主页面
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      {/* 这里放主页面的内容 */}
-      <div className="app">
-        <Navbar />
-        <Header />
-        <About />
-        <Work />
-        <Skills />
-        <Testimonial />
-        <Footer />
-      </div>
-    </motion.div>
+    <div>
+      {/* 使用Suspense组件，当LazyMainPage组件加载时显示LoadingPage组件 */}
+      <Suspense fallback={<LoadingPage loadingProgress={loadingProgress} />}>
+        {loading ? (
+          // 显示loading页面，并传递loading进度作为参数
+          <LoadingPage loadingProgress={loadingProgress} />
+        ) : (
+          // 加载完成后显示主页面
+          <LazyMainPage />
+        )}
+      </Suspense>
+    </div>
   );
 };
 
