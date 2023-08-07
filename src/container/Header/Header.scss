@@ -1,9 +1,5 @@
 #home {
   position: relative;
-  background: url("../../assets/bgIMG.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: repeat;
 
   // disable the default padding styles
   .app__wrapper {
@@ -108,9 +104,6 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
-
-    background: var(--white-color);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 
     img {
       width: 60%;

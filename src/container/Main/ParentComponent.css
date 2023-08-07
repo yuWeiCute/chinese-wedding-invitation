@@ -1,0 +1,32 @@
+.parent-container {
+  /* Add any common styles for the parent container */
+}
+
+/* Define the transition effect for the sticky behavior */
+.header.sticky,
+.about.sticky,
+.footer.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: top 0.5s ease;
+}
+
+/* Add any specific styles for the header component */
+.header {
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+/* Add any specific styles for the about component */
+.about {
+  height: 100vh;
+  background-color: #d3d3d3;
+}
+
+/* Add any specific styles for the footer component */
+.footer {
+  height: 100vh;
+  background-color: #a9a9a9;
+}

@@ -8,11 +8,11 @@ import './Skills.scss';
 
 const Skills = () => {
   const [experiences, setExperiences] = useState([]);
-  const [skills, setSkills] = useState([]);
+  const [location, setSkills] = useState([]);
 
   useEffect(() => {
     const query = '*[_type == "experiences"]';
-    const skillsQuery = '*[_type == "skills"]';
+    const skillsQuery = '*[_type == "location"]';
 
     client.fetch(query).then((data) => {
       setExperiences(data);
@@ -29,7 +29,7 @@ const Skills = () => {
 
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
-          {skills.map((skill) => (
+          {location.map((skill) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
@@ -56,26 +56,26 @@ const Skills = () => {
                 <p className="bold-text">{experience.year}</p>
               </div>
               <motion.div className="app__skills-exp-works">
-                {experience.works.map((work) => (
+                {experience.works.map((time) => (
                   <>
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
-                      className="app__skills-exp-work"
+                      className="app__skills-exp-time"
                       data-tip
-                      data-for={work.name}
-                      key={work.name}
+                      data-for={time.name}
+                      key={time.name}
                     >
-                      <h4 className="bold-text">{work.name}</h4>
-                      <p className="p-text">{work.company}</p>
+                      <h4 className="bold-text">{time.name}</h4>
+                      <p className="p-text">{time.company}</p>
                     </motion.div>
                     <ReactTooltip
-                      id={work.name}
+                      id={time.name}
                       effect="solid"
                       arrowColor="#fff"
-                      className="skills-tooltip"
+                      className="location-tooltip"
                     >
-                      {work.desc}
+                      {time.desc}
                     </ReactTooltip>
                   </>
                 ))}
@@ -90,6 +90,6 @@ const Skills = () => {
 
 export default AppWrap(
   MotionWrap(Skills, 'app__skills'),
-  'skills',
+  'location',
   'app__whitebg',
 );

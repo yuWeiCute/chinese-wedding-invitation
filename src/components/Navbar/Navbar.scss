@@ -6,11 +6,11 @@
   align-items: center;
 
   padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.25);
+  // background: rgba(255, 255, 255, 0.25);
   // box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  // backdrop-filter: blur(4px);
+  // -webkit-backdrop-filter: blur(4px);
+  // border: 1px solid rgba(255, 255, 255, 0.18);
   position: fixed;
   z-index: 2;
 }
@@ -84,8 +84,10 @@
 .app__navbar-menu {
   width: 35px;
   height: 35px;
+  right: 32px;
+  bottom: 16px;
   border-radius: 50%;
-  position: relative;
+  position: fixed;
 
   display: flex;
   justify-content: center;

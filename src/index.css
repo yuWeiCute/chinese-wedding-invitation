@@ -3,11 +3,11 @@
 :root {
   --font-base: "DM Sans", sans-serif;
 
-  --primary-color: #edf2f8;
-  --secondary-color: #313bac;
-  --black-color: #030303;
-  --lightGray-color: #e4e4e4;
-  --gray-color: #6b7688;
+  --primary-color: #a03f38;
+  --secondary-color: #913229;
+  --yellow-color: #f7db87;
+  --lightGray-color: #e0d6ba;
+  --gray-color: #dcc88d;
   --brown-color: #46364a;
   --white-color: #ffffff;
 }
@@ -17,4 +17,48 @@
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+}
+
+/* 在全局CSS中取消横向滚动条 */
+body {
+  overflow-x: hidden;
+  height:100vh;
+	overflow:scroll;
+}
+
+#root{
+  height:100%;
+}
+
+/* #root > div { */
+  /* 在这里添加你想要设置的样式属性 */
+  /* height:100vh; */
+  /* 可以添加更多样式属性 */
+/* } */
+
+/* 滚动条整体样式 */
+::-webkit-scrollbar {
+  width: 0px; /* 滚动条宽度 */
+  height: 0px; /* 修改滚动条高度 */
+}
+
+/* 滚动条轨道样式 */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* 滚动条轨道背景色 */
+}
+
+/* 滚动条滑块样式 */
+::-webkit-scrollbar-thumb {
+  background-color: #e0d6ba; /* 滚动条滑块背景色 */
+  border-radius: 5px; /* 滚动条滑块圆角 */
+}
+
+/* 滚动条滑块悬停样式 */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #dcc88d; /* 滚动条滑块悬停时的背景色 */
+}
+
+/* 滚动条滑块按下样式 */
+::-webkit-scrollbar-thumb:active {
+  background-color: #f7db87; /* 滚动条滑块按下时的背景色 */
 }

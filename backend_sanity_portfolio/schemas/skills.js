@@ -1,5 +1,5 @@
 export default{
-    name:'skills',
+    name:'location',
     title:'Skills',
     type: 'document',
     fields:[

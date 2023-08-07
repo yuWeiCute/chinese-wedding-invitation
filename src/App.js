@@ -23,7 +23,7 @@ const App = () => {
         setLoading(false);
         clearInterval(timer);
       }
-    }, 50); // 50ms模拟一步加载
+    }, 5); // 50ms模拟一步加载
 
     // 清除计时器
     return () => clearInterval(timer);
@@ -32,13 +32,13 @@ const App = () => {
   return (
     <div>
       {/* 使用Suspense组件，当LazyMainPage组件加载时显示LoadingPage组件 */}
-      <Suspense fallback={<LoadingPage loadingProgress={loadingProgress} />}>
+      <Suspense fallback={<LoadingPage loadingProgress={loadingProgress} style={{ height: '100vh' }} />}>
         {loading ? (
           // 显示loading页面，并传递loading进度作为参数
           <LoadingPage loadingProgress={loadingProgress} />
         ) : (
           // 加载完成后显示主页面
-          <LazyMainPage />
+          <LazyMainPage style={{ height: '100vh' }} />
         )}
       </Suspense>
     </div>

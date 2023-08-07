@@ -105,7 +105,7 @@
 .app__skills-exp-works {
   flex: 1;
 
-  .app__skills-exp-work {
+  .app__skills-exp-time {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -138,7 +138,7 @@
   }
 }
 
-.skills-tooltip {
+.location-tooltip {
   max-width: 300px !important;
   background-color: var(--white-color) !important;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.1) !important;
