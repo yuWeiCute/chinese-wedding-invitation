@@ -9,7 +9,7 @@ import React from 'react';
 const Main = React.forwardRef((props, ref) => {
   const mainStyle = {
     // position: 'absolute',
-    overflow: 'scroll',
+    // overflow: 'scroll',
     height: '100%',
     scrollSnapType: 'y proximity',
   };

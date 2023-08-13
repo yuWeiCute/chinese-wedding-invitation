@@ -77,4 +77,12 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['*.jsx', '*.js'], // 适用于 JSX 和 JS 文件
+      rules: {
+        'jsx-a11y/media-has-caption': 'off', // 关闭 jsx-a11y/media-has-caption 规则
+      },
+    },
+  ],
 };

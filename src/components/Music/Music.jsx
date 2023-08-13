@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import musicImg from './music.png';
+import { BsFillBellFill } from 'react-icons/bs';
+// import musicImg from './music.png';
 
 const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -35,6 +36,12 @@ const MusicPlayer = () => {
     };
   }, []);
 
+  const svgStyle = {
+    color: 'var(--gray-color)',
+    width: '30px',
+    height: '35px',
+  };
+
   const containerStyle = {
     position: 'fixed',
     top: '20px',
@@ -55,15 +62,23 @@ const MusicPlayer = () => {
 
   return (
     <div style={containerStyle} onClick={handleTogglePlay}>
-      <motion.img
+      {/* <motion.img
         src={musicImg}
         alt="Music"
         style={{ width: '30px', height: '35px' }}
         animate={isPlaying ? rockingMotion : {}} // 当isPlaying为true时应用摇晃动画
-      />
+      /> */}
+      <motion.div
+        alt="Music"
+        style={svgStyle}
+        animate={isPlaying ? rockingMotion : {}}
+      >
+        <BsFillBellFill style={svgStyle} />
+      </motion.div>
+
       <audio ref={audioRef} loop>
         <source src={musicURL} type="audio/mpeg" />
-        <track kind="captions" />
+        {/* <track kind="captions" /> */}
       </audio>
     </div>
   );

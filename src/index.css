@@ -21,9 +21,9 @@
 
 /* 在全局CSS中取消横向滚动条 */
 body {
-  overflow-x: hidden;
-  height:100vh;
-	overflow:scroll;
+  /* overflow-x: hidden;
+  height:100vh; */
+	/* overflow:scroll; */
 }
 
 #root{
@@ -38,8 +38,8 @@ body {
 
 /* 滚动条整体样式 */
 ::-webkit-scrollbar {
-  width: 0px; /* 滚动条宽度 */
-  height: 0px; /* 修改滚动条高度 */
+  width: 20px; /* 滚动条宽度 */
+  height: 20px; /* 修改滚动条高度 */
 }
 
 /* 滚动条轨道样式 */

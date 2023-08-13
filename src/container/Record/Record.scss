@@ -1,0 +1,81 @@
+// #home {
+//   position: relative;
+
+//   // disable the default padding styles
+//   .app__wrapper {
+//     padding: 0;
+
+//     .copyright {
+//       display: none;
+//     }
+//   }
+// }
+
+.app__record {
+  width: 100vh;
+  height: 100vh;
+  flex-direction: column;
+  svg {
+    color: var(--yellow-color);
+    stroke-width: 0.5; /* 设置描边宽度为3像素 */
+    stroke: var(--yellow-color);
+  }
+
+  /* 使用CSS创建只含有一个圆点的<div>元素 */
+  .circle-container {
+    width: 8px;
+    height: 8px;
+    background-color:  var(--yellow-color);
+    border-radius: 50%;
+    /* 使元素呈现为圆形 */
+  }
+}
+
+.circle-cmp {
+  position: absolute;
+}
+
+.app__record-circles {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.app__record-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 450px;
+
+  @media screen and (min-width: 2000px) {
+    width: 480px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    width: 420px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 320px;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 75%;
+  }
+
+  video{
+    z-index: 3;
+  }
+}
+
+.app__record-video::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  width: calc(100% + 14px);
+  height: calc(100% + 14px);
+  background: linear-gradient(to top right, var(--yellow-color), var(--lightGray-color));
+  z-index: 1;
+}
