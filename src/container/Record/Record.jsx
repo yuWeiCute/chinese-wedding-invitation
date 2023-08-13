@@ -1,7 +1,7 @@
 // import React, { Suspense } from 'react';
 import React, { useRef, useEffect } from 'react';
 // import React from 'react';
-// import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 // import { BsChevronDown } from 'react-icons/bs';
 // import DoubleXi from '../../components/DoubleXi';
 // import { AppWrap } from '../../wrapper';
@@ -57,7 +57,11 @@ const Record = () => {
       transition={{ duration: 0.5, delayChildren: 0.5 }}
       className="app__record-img"
     > */}
-      <div className="app__record-video">
+      <motion.div
+        whileInView={{ opacity: [0, 1] }}
+        transition={{ duration: 0.8, delayChildren: 0.5 }}
+        className="app__record-video"
+      >
         <video
           ref={videoRef}
           autoPlay
@@ -71,7 +75,7 @@ const Record = () => {
           {/* <track kind="captions" /> */}
           Your browser does not support the video tag.
         </video>
-      </div>
+      </motion.div>
       {/* <video src={weddingVideo} controls></video> */}
       {/* <Suspense fallback={<div>Loading video...</div>}>
         <LazyVideo />

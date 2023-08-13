@@ -46,7 +46,6 @@ const Header = () => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="app__header-img"
       >
-        <img style={{ zIndex: '10' }} src={images.profile} alt="profile_bg" />
         <motion.div
           variants={scaleVariants}
           whileInView={scaleVariants.whileInView}
@@ -55,23 +54,34 @@ const Header = () => {
           <div className="circle-cmp" style={{ zIndex: '99', width: '18%', top: '6%', left: '19%' }}>
             <Flower rotationSpeed={20} imageUrl={flowerRed} />
           </div>
-          <div className="circle-cmp" style={{ zIndex: '1', width: '40%', top: '5%', left: '-10%' }}>
+          <div className="circle-cmp" style={{ zIndex: '0', width: '40%', top: '5%', left: '-10%' }}>
             <Flower rotationSpeed={25} imageUrl={flowerYellow} />
           </div>
           <div className="circle-cmp" style={{ zIndex: '99', width: '10%', top: '19%', left: '12%' }}>
             <Flower rotationSpeed={30} imageUrl={flowerWhite} />
           </div>
-
           <div className="circle-cmp" style={{ zIndex: '99', width: '36%', bottom: '-5%', right: '-5%' }}>
             <Flower rotationSpeed={20} imageUrl={flowerRed} />
           </div>
-          <div className="circle-cmp" style={{ zIndex: '1', width: '28%', bottom: '20%', right: '-8%' }}>
+          <div className="circle-cmp" style={{ zIndex: '0', width: '28%', bottom: '20%', right: '-8%' }}>
             <Flower rotationSpeed={25} imageUrl={flowerYellow} />
           </div>
           <div className="circle-cmp" style={{ zIndex: '99', width: '10%', bottom: '0%', right: '30%' }}>
             <Flower rotationSpeed={30} imageUrl={flowerWhite} />
           </div>
         </motion.div>
+        <motion.img
+          key={images.profile} // 确保 key 值在切换图片时更新
+          style={{ zIndex: 0 }}
+          src={images.profile}
+          alt="profile_bg"
+          whileInView={{ opacity: [0, 1] }}
+          transition={{ duration: 1.2, delayChildren: 0.5 }}
+          // initial={{ opacity: 0 }} // 初始透明度
+          // animate={{ opacity: 1 }} // 最终透明度
+          // exit={{ opacity: 0 }} // 图片切换时淡出效果
+          // transition={{ duration: 1 }}
+        />
       </motion.div>
       <BsChevronDown />
       <div className="circle-container" />

@@ -1,6 +1,6 @@
 import React from 'react';
 // import React, { useRef } from 'react';
-import DoubleXi from '../components/DoubleXi/DoubleXi';
+// import DoubleXi from '../components/DoubleXi/DoubleXi';
 import Music from '../components/Music/Music';
 import SocialMedia from '../components/SocialMedia';
 import Main from './Main/Main';
@@ -15,7 +15,7 @@ const mainStyle = {
 const MainPage = () => (
   <div style={mainStyle}>
     <Music />
-    <DoubleXi />
+    {/* <DoubleXi /> */}
     <SocialMedia />
     <Main />
   </div>
