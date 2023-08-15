@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { BsChevronDown } from 'react-icons/bs';
+import { Map, Marker } from 'react-amap';
 // import DoubleXi from '../../components/DoubleXi';
 // import { AppWrap } from '../../wrapper';
 import { images } from '../../constants';
@@ -22,6 +23,17 @@ const scaleVariants = {
 };
 
 const Location = () => {
+  const longitude = 11;
+  const latitude = 11;
+  const mapCenter = { longitude: 120, latitude: 35 };
+  const markerPosition = { longitude: 121, latitude: 36 };
+  const mapPlugins = ['ToolBar'];
+
+  const openMapApp = () => {
+    const mapUrl = `https://uri.amap.com/marker?position=${longitude},${latitude}&name=标注位置&src=e65f9f97072c92b72bcd6aef75936b25`;
+    window.location.href = mapUrl;
+  };
+
   const scrollableRef = useRef(null);
 
   const handleScroll = () => {
@@ -70,9 +82,9 @@ const Location = () => {
             <Flower rotationSpeed={30} imageUrl={flowerWhite} />
           </div>
         </motion.div>
-        <motion.img
+        <motion.div
+          style={{ zIndex: 0, width: '500px', height: '400px' }}
           key={images.profile} // 确保 key 值在切换图片时更新
-          style={{ zIndex: 0 }}
           src={images.profile}
           alt="profile_bg"
           whileInView={{ opacity: [0, 1] }}
@@ -81,7 +93,11 @@ const Location = () => {
           // animate={{ opacity: 1 }} // 最终透明度
           // exit={{ opacity: 0 }} // 图片切换时淡出效果
           // transition={{ duration: 1 }}
-        />
+        >
+          <Map mapStyle="fresh" plugins={mapPlugins} center={mapCenter} zoom={6}>
+            <Marker position={markerPosition} events={{ click: openMapApp }} />
+          </Map>
+        </motion.div>
       </motion.div>
       <BsChevronDown />
       <div className="circle-container" />

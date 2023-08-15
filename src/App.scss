@@ -5,6 +5,19 @@
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
+  z-index: -99; /* 设置背景图像的 z-index 为 -2 */
+  .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./assets/bgIMG.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    z-index: -5; /* 设置较低的z-index */
+  }
 }
 
 .app__container {

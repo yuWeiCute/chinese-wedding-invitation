@@ -31,6 +31,7 @@ const App = () => {
 
   return (
     <div>
+      <div className="background-image" />
       {/* 使用Suspense组件，当LazyMainPage组件加载时显示LoadingPage组件 */}
       <Suspense fallback={<LoadingPage loadingProgress={loadingProgress} style={{ height: '100vh' }} />}>
         {loading ? (

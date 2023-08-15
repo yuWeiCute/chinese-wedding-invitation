@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 // import { AppWrap } from '../../wrapper';
 // import { images } from '../../constants';
 import './Record.scss';
+import Gwgvv from './Gwgvv.jpg'; // 替换成正确的PNG图像路径
 // import weddingVideo from './wedding.mp4';
 // import LazyVideo from '../../components/Video/Video';
 // import Flower from '../../components/Flowers/Flower';
@@ -69,9 +70,9 @@ const Record = () => {
           loop
           width="100%"
           height="100%"
-          poster="https://streamja.com/i/gw/Gwgvv.jpg"
+          poster={Gwgvv}
         >
-          <source src="https://sloth.cdnja.co/v/gw/Gwgvv.mp4" type="video/mp4" />
+          <source src="https://video-1318392306.cos.ap-shanghai.myqcloud.com/2db0da47553066615ca955112f5b812e.mp4" type="video/mp4" />
           {/* <track kind="captions" /> */}
           Your browser does not support the video tag.
         </video>
