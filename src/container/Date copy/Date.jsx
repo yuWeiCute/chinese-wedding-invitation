@@ -45,7 +45,7 @@ const Date = () => {
       //   myclass = 'darkgrey'; // 当该日期在今天之后时，以深灰字体显示
       // }
       if (k === my_day) {
-        items.push(<li><p className="greenbox" key={`${k}a`}><p>{k}</p></p></li>);
+        items.push(<li className="greenbox" key={`${k}a`}><p>{k}</p></li>);
       } else {
         items.push(<li className="lightgrey" key={`${k}a`}>{k}</li>);
       }
@@ -87,33 +87,27 @@ const Date = () => {
     <div className="app__date">
       {/* <h2 className="head-text">Date & Experiences</h2> */}
       <div className="calendar">
-        <div className="calendar__div" style={{ zIndex: 9, width: '100%', height: '100%' }}>
-          <div className="title">
-
-            <span className="calendar-year">2023</span>
-            <span>
-              <span className="calendar-title">9 </span>
-              <span className="calendar-year"> 月</span>
-            </span>
-            {/* <a href="" id="prev">Prev Month</a>
+        <div className="title">
+          <h1 className="green" id="calendar-title">Month</h1>
+          <h2 className="green small" id="calendar-year">Year</h2>
+          {/* <a href="" id="prev">Prev Month</a>
           <a href="" id="next">Next Month</a> */}
+        </div>
+        <div className="body">
+          <div className="lightgrey body-list">
+            <ul>
+              <li>MON</li>
+              <li>TUE</li>
+              <li>WED</li>
+              <li>THU</li>
+              <li>FRI</li>
+              <li>SAT</li>
+              <li>SUN</li>
+            </ul>
+            <ul>{generateListItems(31, 5, 19)}</ul>
           </div>
-          <div>
-            <div className="lightgrey body-list">
-              <ul className="redback">
-                <li>一</li>
-                <li>二</li>
-                <li>三</li>
-                <li>四</li>
-                <li>五</li>
-                <li>六</li>
-                <li>七</li>
-              </ul>
-              <ul>{generateListItems(31, 5, 19)}</ul>
-            </div>
-            <div className="darkgrey body-list">
-              <ul id="days" />
-            </div>
+          <div className="darkgrey body-list">
+            <ul id="days" />
           </div>
         </div>
       </div>

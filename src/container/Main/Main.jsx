@@ -75,6 +75,7 @@ const Main = () => {
   };
 
   const screenStyle = {
+    position: 'relative',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

@@ -1,18 +1,24 @@
 .app__date {
-  flex: 1;
-  width: 100%;
+  position: relative;
+  width: 100vh;
+  height: 100vh;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  /* 水平居中对齐 */
+  align-items: center;
+  /* 垂直居中对齐 */
 }
 
 .app__date-container {
-  width: 80%;
+  width: 60%;
   margin-top: 3rem;
 
   display: flex;
   flex-direction: row;
 
   @media screen and (max-width: 900px) {
-    width: 100%;
+    width: 70%;
     flex-direction: column;
   }
 }
@@ -157,73 +163,182 @@
 }
 
 .calendar {
+  // padding: 5px;
+  position: relative;
   color: var(--gray-color);
-  width: 450px;
-  height: 350px;
+  width: 400px;
+  height: 400px;
   background: #fff;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
-}
 
-.body-list {
-  color: var(--gray-color);
-  ul {
+  .calendar__div {
+    position: relative;
     width: 100%;
-    font-family: arial;
-    font-weight: bold;
-    font-size: 14px;
+    height: 100%;
+    z-index: 3;
+    background: #fff;
 
-    li {
-      width: 14.28%;
-      height: 36px;
-      line-height: 36px;
-      list-style-type: none;
-      display: block;
-      box-sizing: border-box;
-      float: left;
-      text-align: center;
-    }
-
-    .lightgrey{
-      font-weight: lighter;
-      color:#a8a8a8; /*浅灰色*/
-    }
-    .greenbox{
-      #text{
-        z-index: 7;
-      }
-      font-weight: lighter;
+    .title {
+      padding-left: 25px;
+      padding-right: 25px;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: Arial, sans-serif;
-      font-size: 18px;
-      color: white; /* 文字颜色 */
-      position: relative;
-    }
-    .greenbox::before, .greenbox::after {
-      content: "";
-      z-index: -1;
-      position: absolute;
-      width: 22px;
-      height: 36px;
-      background-color: var(--secondary-color);
-      border-radius: 22px 22px 0 0;
+      justify-content: space-between;
+      /* 两侧分布 */
+      align-items: flex-end;
+      /* 底部对齐 */
+      color: var(--secondary-color);
+
+      .calendar-year {
+        font-size: 30px;
+        padding-bottom: 6px;
+      }
+
+      .calendar-title {
+        font-size: 52px;
+      }
     }
 
-    .greenbox::before {
-      z-index: -1;
-      transform: rotate(-45deg);
-      top: 0px;
-      left: 16px;
-    }
+    .body-list {
+      padding-left: 15px;
+      padding-right: 15px;
+      z-index: 2;
+      color: var(--gray-color);
 
-    .greenbox::after {
-      z-index: -1;
-      transform: rotate(45deg);
-      top: 0px;
-      right: 16px;
+      .redback {
+
+        margin-top: 10px;
+        background-color: var(--secondary-color);
+        /* 设置背景颜色为红色 */
+        border-radius: 12px;
+        /* 设置圆角半径 */
+        // border: 2px solid black; /* 设置描边，边框为2像素宽度的黑色边框 */
+        padding: 12px;
+
+        /* 设置内边距，以使内容不会紧贴边框 */
+        li {
+          font-weight: normal;
+          color: white;
+          margin-top: -16px;
+        }
+      }
+
+      ul {
+        width: 100%;
+        font-family: arial;
+        font-weight: bold;
+        font-size: 14px;
+
+        li {
+
+          width: 14.28%;
+          height: 32px;
+          line-height: 32px;
+          list-style-type: none;
+          display: block;
+          box-sizing: border-box;
+          float: left;
+          text-align: center;
+        }
+
+        .spacer {
+          width: 10px;
+          /* 设置占位符宽度 */
+          height: 1px;
+          /* 设置占位符高度 */
+          display: inline-block;
+          /* 使 <span> 行内显示 */
+        }
+
+        .lightgrey {
+          font-weight: lighter;
+          color: #a8a8a8;
+          /*浅灰色*/
+        }
+
+        .greenbox {
+          text-align: center;
+          /* 水平居中对齐 */
+          // display: inline-block; /* 让 <p> 元素变为行内块元素 */
+          // vertical-align: middle; /* 垂直居中对齐 */
+          margin: 0;
+
+          /* 清除默认的外边距 */
+          p {
+            display: inline-block;
+            /* 让 <p> 元素变为行内块元素 */
+            vertical-align: middle;
+            /* 垂直居中对齐 */
+            z-index: 7;
+          }
+
+          width: 30px;
+          height: 30px;
+          font-weight: lighter;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: Arial,
+          sans-serif;
+          font-size: 17px;
+          color: white;
+          /* 文字颜色 */
+          position: relative;
+        }
+
+        .greenbox::before,
+        .greenbox::after {
+          content: "";
+          z-index: 4;
+          position: absolute;
+          width: 20px;
+          height: 30px;
+          background-color: var(--secondary-color);
+          border-radius: 20px 20px 0 0;
+        }
+
+        .greenbox::before {
+          transform: rotate(-45deg);
+          top: 0px;
+          left: 5%;
+        }
+
+        .greenbox::after {
+          transform: rotate(45deg);
+          top: 0px;
+          right: 5%;
+        }
+      }
     }
+  }
+
+  @media screen and (min-width: 2000px) {
+    width: 420px;
+    height: 420px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    width: 400px;
+    height: 400px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 320px;
+    height: 320px;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 70%;
+    height: 300px;
   }
 }
 
-
+.calendar::before {
+  // z-index: 1;
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  width: calc(100% + 14px);
+  height: calc(100% + 14px);
+  background: linear-gradient(to top right, var(--yellow-color), var(--lightGray-color));
+}

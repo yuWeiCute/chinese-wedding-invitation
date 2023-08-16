@@ -15,9 +15,11 @@
   width: 100vh;
   height: 100vh;
   flex-direction: column;
+
   svg {
     color: var(--yellow-color);
-    stroke-width: 0.5; /* 设置描边宽度为3像素 */
+    stroke-width: 0.5;
+    /* 设置描边宽度为3像素 */
     stroke: var(--yellow-color);
   }
 
@@ -25,7 +27,7 @@
   .circle-container {
     width: 8px;
     height: 8px;
-    background-color:  var(--yellow-color);
+    background-color: var(--yellow-color);
     border-radius: 50%;
     /* 使元素呈现为圆形 */
   }
@@ -47,24 +49,36 @@
   align-items: center;
   position: relative;
   width: 450px;
+  height: 450px;
 
   @media screen and (min-width: 2000px) {
-    width: 480px;
+    width: 420px;
+    height: 420px;
   }
 
   @media screen and (max-width: 1400px) {
-    width: 420px;
+    width: 400px;
+    height: 400px;
   }
 
   @media screen and (max-width: 1200px) {
     width: 320px;
+    height: 320px;
   }
 
   @media screen and (max-width: 450px) {
-    width: 75%;
+    width: 70%;
+    height: 300px;
   }
+}
 
-  img {
-    width: 100%,
-  }
+.app__location-img::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  width: calc(100% + 14px);
+  height: calc(100% + 14px);
+  background: linear-gradient(to top right, var(--yellow-color), var(--lightGray-color));
+  z-index: 1;
 }
