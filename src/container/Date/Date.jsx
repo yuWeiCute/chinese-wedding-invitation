@@ -4,10 +4,10 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ReactTooltip from 'react-tooltip';
 // import Calendar from 'react-calendar';
-import Flower from '../../components/Flowers/Flower';
-import flowerRed from '../../components/Flowers/flowerRed.png';
-import flowerWhite from '../../components/Flowers/flowerWhite.png';
-import flowerYellow from '../../components/Flowers/flowerYellow.png';
+import Flower from '../../components/Flower/Flower';
+import flowerRed from '../../components/Flower/flowerRed.png';
+import flowerWhite from '../../components/Flower/flowerWhite.png';
+import flowerYellow from '../../components/Flower/flowerYellow.png';
 
 // import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';

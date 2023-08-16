@@ -6,14 +6,14 @@ import { motion } from 'framer-motion';
 // import DoubleXi from '../../components/DoubleXi';
 // import { AppWrap } from '../../wrapper';
 // import { images } from '../../constants';
-import './Record.scss';
+import './About.scss';
 import Gwgvv from './Gwgvv.jpg'; // 替换成正确的PNG图像路径
 // import weddingVideo from './wedding.mp4';
 // import LazyVideo from '../../components/Video/Video';
-// import Flower from '../../components/Flowers/Flower';
-// import flowerRed from '../../components/Flowers/flowerRed.png';
-// import flowerWhite from '../../components/Flowers/flowerWhite.png';
-// import flowerYellow from '../../components/Flowers/flowerYellow.png';
+// import Flower from '../../components/Flower/Flower';
+// import flowerRed from '../../components/Flower/flowerRed.png';
+// import flowerWhite from '../../components/Flower/flowerWhite.png';
+// import flowerYellow from '../../components/Flower/flowerYellow.png';
 
 // const scaleVariants = {
 //   whileInView: {
@@ -26,7 +26,7 @@ import Gwgvv from './Gwgvv.jpg'; // 替换成正确的PNG图像路径
 //   },
 // };
 
-const Record = () => {
+const About = () => {
   const videoRef = useRef(null);
 
   const handleMouseMove = () => {
@@ -72,7 +72,7 @@ const Record = () => {
           height="100%"
           poster={Gwgvv}
         >
-          <source src="https://video-1318392306.cos.ap-shanghai.myqcloud.com/2db0da47553066615ca955112f5b812e.mp4" type="video/mp4" />
+          <source src="https://abcccccvideo-1318392306.cos.ap-shanghai.myqcloud.com/2db0da47553066615ca955112f5b812e.mp4" type="video/mp4" />
           {/* <track kind="captions" /> */}
           Your browser does not support the video tag.
         </video>
@@ -118,5 +118,5 @@ const Record = () => {
     </div>
   );
 };
-export default Record;
+export default About;
 

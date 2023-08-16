@@ -1,6 +1,5 @@
 import React, { useEffect, useState, lazy, Suspense } from 'react';
 import LoadingPage from './container/LoadingPage/LoadingPage';
-import './App.scss';
 
 // 使用lazy()包裹主页面组件，实现懒加载
 const LazyMainPage = lazy(() => import('./container/MainPage'));
@@ -31,7 +30,6 @@ const App = () => {
 
   return (
     <div>
-      {/* 使用Suspense组件，当LazyMainPage组件加载时显示LoadingPage组件 */}
       <Suspense fallback={<LoadingPage loadingProgress={loadingProgress} style={{ height: '100vh' }} />}>
         {loading ? (
           // 显示loading页面，并传递loading进度作为参数
