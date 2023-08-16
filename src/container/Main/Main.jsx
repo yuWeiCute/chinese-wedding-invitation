@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 // import { Navbar } from '../../components';
 import { motion } from 'framer-motion';
+import './Main.scss';
 import Header from '../Header/Header';
 import Record from '../Record/Record';
 import Footer from '../Footer/Footer';
@@ -8,6 +9,7 @@ import Date from '../Date/Date';
 // import Testimonial from '../Testimonial/Testimonial';
 import Location from '../Location/Location';
 import Xi from './doubXi.gif';
+import NavigationDots from '../../components/NavigationDots.jsx';
 
 const Main = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -16,9 +18,11 @@ const Main = () => {
 
   const scrollableRef = useRef(null);
 
+  const [sections] = useState(['home', 'about', 'date', 'location', 'contact']);
+  const [currentSection, setCurrentSection] = useState(sections[0]);
   const handleScroll = () => {
-    const scrollDistance = scrollableRef.current.scrollTop; // 获取元素内部的滚动距离
-    console.log('Scroll distance:', scrollDistance);
+    // const scrollDistance = scrollableRef.current.scrollTop; // 获取元素内部的滚动距离
+    // console.log('Scroll distance:', scrollDistance);
     // 在这里执行其他操作，根据滚动距离进行相应的处理
     // 使用requestAnimationFrame优化更新频率
     requestAnimationFrame(() => {
@@ -35,12 +39,29 @@ const Main = () => {
     });
   };
 
+  const handleScroll2 = () => {
+    console.log('11111');
+    // eslint-disable-next-line no-plusplus
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const element = document.getElementById(sections[i]);
+      if (element && element.getBoundingClientRect().top <= window.innerHeight / 2) {
+        setCurrentSection(sections[i]);
+        // eslint-disable-next-line no-restricted-globals
+        history.replaceState(null, null, `#${sections[i]}`);
+        break;
+      }
+    }
+  };
+
   useEffect(() => {
     const scrollableElement = scrollableRef.current;
     scrollableElement.addEventListener('scroll', handleScroll);
+    handleScroll2(); // Initialize the current section based on the initial scroll position
 
+    scrollableElement.addEventListener('scroll', handleScroll2);
     return () => {
       scrollableElement.removeEventListener('scroll', handleScroll);
+      scrollableElement.removeEventListener('scroll', handleScroll2);
     };
   }, []);
 
@@ -71,7 +92,8 @@ const Main = () => {
   const mainStyle = {
     overflow: 'scroll',
     height: '100vh',
-    scrollSnapType: 'y proximity',
+    // scrollSnapType: 'y proximity',
+    scrollSnapType: 'y mandatory',
   };
 
   const screenStyle = {
@@ -94,24 +116,44 @@ const Main = () => {
         animate={{ x: position.x, y: position.y, scale }} // 动画属性包括x、y的位置和scale的缩放
         transition={{ type: 'spring', stiffness: 100, damping: 20 }}
       />
+      <NavigationDots active={currentSection} />
       <div ref={scrollableRef} style={mainStyle} className="main-page app">
         {/* <Navbar /> */}
         {/* 三个画面 */}
-        <div ref={mainRef} className="screen" style={{ ...screenStyle, height: '100%' }}>
+        <div
+          key="div1"
+          id="home"
+          data-anchor="div1"
+          ref={mainRef}
+          className="screen"
+          style={{ ...screenStyle, height: '100%' }}
+        >
           {/* 111 */}
           <Header className="screen" />
         </div>
-        <div className="screen" style={{ ...screenStyle, height: '100vh' }}>
+        <div
+          key="div2"
+          id="about"
+          data-anchor="div2"
+          className="screen"
+          style={{ ...screenStyle, height: '100vh' }}
+        >
           {/* 222 */}
           <Record />
         </div>
-        <div className="screen" style={{ ...screenStyle, height: '100vh' }}>
-          <Location />
-        </div>
-        <div className="screen" style={{ ...screenStyle, height: '100vh' }}>
+        <div
+          key="div3"
+          id="date"
+          data-anchor="div3"
+          className="screen"
+          style={{ ...screenStyle, height: '100vh' }}
+        >
           <Date />
         </div>
-        <div className="screen" style={{ ...screenStyle, height: '100vh' }}>
+        <div className="screen" id="location" style={{ ...screenStyle, height: '100vh' }}>
+          <Location />
+        </div>
+        <div className="screen" id="contact" style={{ ...screenStyle, height: '100vh' }}>
           <Footer />
         </div>
       </div>

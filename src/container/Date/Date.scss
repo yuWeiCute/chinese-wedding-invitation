@@ -11,15 +11,27 @@
 }
 
 .app__date-container {
-  width: 60%;
   margin-top: 3rem;
 
   display: flex;
   flex-direction: row;
 
-  @media screen and (max-width: 900px) {
-    width: 70%;
-    flex-direction: column;
+  width: 450px;
+
+  @media screen and (min-width: 2000px) {
+    width: 480px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    width: 420px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 320px;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 75%;
   }
 }
 
@@ -162,12 +174,80 @@
   }
 }
 
+
+.circle-cmp {
+  position: absolute;
+}
+
+.app__header-circles {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.app__header-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 450px;
+
+  @media screen and (min-width: 2000px) {
+    width: 480px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    width: 420px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 320px;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 75%;
+  }
+
+  img {
+    width: 100%,
+  }
+}
+
+.app__date-circles {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.app__date-img{
+  width: 400px;
+  height: 400px;
+  @media screen and (min-width: 2000px) {
+    width: 420px;
+    height: 420px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    width: 400px;
+    height: 400px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 320px;
+    height: 320px;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 70%;
+    height: 300px;
+  }
+}
 .calendar {
   // padding: 5px;
   position: relative;
   color: var(--gray-color);
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
   background: #fff;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
 
@@ -311,25 +391,7 @@
     }
   }
 
-  @media screen and (min-width: 2000px) {
-    width: 420px;
-    height: 420px;
-  }
 
-  @media screen and (max-width: 1400px) {
-    width: 400px;
-    height: 400px;
-  }
-
-  @media screen and (max-width: 1200px) {
-    width: 320px;
-    height: 320px;
-  }
-
-  @media screen and (max-width: 450px) {
-    width: 70%;
-    height: 300px;
-  }
 }
 
 .calendar::before {

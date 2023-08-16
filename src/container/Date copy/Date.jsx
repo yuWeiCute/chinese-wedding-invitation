@@ -113,7 +113,7 @@ const Date = () => {
       </div>
       {/* <Calendar onChange={onChange} value={value} /> */}
       <div className="app__date-container">
-        <motion.div className="app__date-list">
+        {/* <motion.div className="app__date-list">
           {location.map((skill) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
@@ -130,7 +130,7 @@ const Date = () => {
               <p className="p-text">{skill.name}</p>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
         <div className="app__date-exp">
           {experiences.map((experience) => (
             <motion.div

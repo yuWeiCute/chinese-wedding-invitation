@@ -1,11 +1,10 @@
 .app__footer {
-  flex: 1;
+  position: relative;
   width: 100%;
   flex-direction: column;
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .app__footer-cards {

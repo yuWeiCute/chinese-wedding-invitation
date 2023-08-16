@@ -1,0 +1,43 @@
+.page-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .div-list {
+    z-index: 500;
+    top: 50%;
+    right: 10%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  
+  .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .circle.active {
+    transform: scale(1.2);
+  }
+  
+  .div-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .content-div {
+    width: 100%;
+    min-height: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+  }

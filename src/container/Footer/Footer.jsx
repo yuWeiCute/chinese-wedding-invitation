@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // import { images } from '../../constants';
-// import { AppWrap, MotionWrap } from '../../wrapper';
+import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';
 import './Footer.scss';
 
@@ -36,7 +36,7 @@ const Footer = () => {
   };
 
   return (
-    <>
+    <div className="app__footer">
       <h2 className="head-text">Take a coffee & chat with me</h2>
       {!isFormSubmitted ? (
         <div className="app__footer-form app__flex">
@@ -64,13 +64,13 @@ const Footer = () => {
           </h3>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
-export default Footer;
-// export default AppWrap(
-//   MotionWrap(Footer, 'app__footer'),
-//   'contact',
-//   'app__whitebg',
-// );
+// export default Footer;
+export default AppWrap(
+  MotionWrap(Footer, 'app__footer'),
+  'contact',
+  'app__whitebg',
+);
