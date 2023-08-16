@@ -1,15 +1,9 @@
-/* eslint-disable no-undef */
-/* eslint-disable camelcase */
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ReactTooltip from 'react-tooltip';
-// import Calendar from 'react-calendar';
-import Flower from '../../components/Flower/Flower';
-import flowerRed from '../../components/Flower/flowerRed.png';
-import flowerWhite from '../../components/Flower/flowerWhite.png';
-import flowerYellow from '../../components/Flower/flowerYellow.png';
-
-// import { AppWrap, MotionWrap } from '../../wrapper';
+import { images } from '../../constants';
+import { Flower } from '../../components';
+import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';
 import './Date.scss';
 
@@ -26,16 +20,15 @@ const scaleVariants = {
 
 const Date = () => {
   const [experiences, setExperiences] = useState([]);
-  // const [location, setDate] = useState([]);
 
-  const generateListItems = (totalDay, firstDay, my_day) => {
+  const generateListItems = (totalDay, firstDay, myDay) => {
     const items = [];
     for (let i = 0; i < firstDay; i += 1) {
       items.push(<li key={i}> </li>); // 为起始日之前的日期创建空白节点
     }
     for (let k = 1; k <= totalDay; k += 1) {
-      if (k === my_day) {
-        items.push(<li><p className="greenbox" key={`${k}a`}><p>{k}</p></p></li>);
+      if (k === myDay) {
+        items.push(<li key={`${k}a`}><p className="greenbox"><p>{k}</p></p></li>);
       } else {
         items.push(<li className="lightgrey" key={`${k}a`}>{k}</li>);
       }
@@ -45,21 +38,15 @@ const Date = () => {
 
   useEffect(() => {
     const query = '*[_type == "experiences"]';
-    const dateQuery = '*[_type == "location"]';
 
     client.fetch(query).then((data) => {
-      console.log(data);
+      // console.log(data);
       setExperiences(data);
-    });
-
-    client.fetch(dateQuery).then((data) => {
-      console.log(data);
-      setDate(data);
     });
   }, []);
 
   return (
-    <div className="app__date">
+    <>
       <motion.div
         whileInView={{ opacity: [0, 1] }}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
@@ -71,22 +58,22 @@ const Date = () => {
           className="app__header-circles"
         >
           <div className="circle-cmp" style={{ zIndex: '99', width: '18%', top: '-9%', left: '-4%' }}>
-            <Flower rotationSpeed={20} imageUrl={flowerRed} />
+            <Flower rotationSpeed={20} imageUrl={images.flowerRed} />
           </div>
           <div className="circle-cmp" style={{ zIndex: '0', width: '35%', bottom: '5%', left: '-14%' }}>
-            <Flower rotationSpeed={25} imageUrl={flowerYellow} />
+            <Flower rotationSpeed={25} imageUrl={images.flowerYellow} />
           </div>
           <div className="circle-cmp" style={{ zIndex: '99', width: '10%', top: '3%', left: '-8%' }}>
-            <Flower rotationSpeed={30} imageUrl={flowerWhite} />
+            <Flower rotationSpeed={30} imageUrl={images.flowerWhite} />
           </div>
           <div className="circle-cmp" style={{ zIndex: '99', width: '32%', bottom: '-17%', right: '-12%' }}>
-            <Flower rotationSpeed={20} imageUrl={flowerRed} />
+            <Flower rotationSpeed={20} imageUrl={images.flowerRed} />
           </div>
           <div className="circle-cmp" style={{ zIndex: '0', width: '28%', bottom: '-14%', right: '7%' }}>
-            <Flower rotationSpeed={25} imageUrl={flowerYellow} />
+            <Flower rotationSpeed={25} imageUrl={images.flowerYellow} />
           </div>
           <div className="circle-cmp" style={{ zIndex: '99', width: '10%', bottom: '20%', right: '-7%' }}>
-            <Flower rotationSpeed={30} imageUrl={flowerWhite} />
+            <Flower rotationSpeed={30} imageUrl={images.flowerWhite} />
           </div>
         </motion.div>
         <motion.div
@@ -166,13 +153,11 @@ const Date = () => {
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-// export default DateAppWrap(
-//   MotionWrap(Date, 'app__date'),
-//   'location',
-//   'app__whitebg',
-// );
-export default Date;
+export default AppWrap(
+  MotionWrap(Date),
+  'date',
+);

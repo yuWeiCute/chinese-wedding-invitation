@@ -1,15 +1,18 @@
 import React from 'react';
 
-const AppWrap = (Component, idName, classNames) => function HOC() {
+const AppWrap = (Component, idName) => function HOC() {
+  const screenStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    scrollSnapAlign: 'start',
+    width: '100%',
+    height: '100vh',
+  };
+
   return (
-    <div id={idName} data-anchor={idName} className={`app__container ${classNames}`}>
-      <div className="app__wrapper app__flex">
-        <Component />
-        <div className="copyright">
-          <p className="p-text">@2020 MICHAEL</p>
-          <p className="p-text">All rights reserved</p>
-        </div>
-      </div>
+    <div id={idName} key={idName} data-anchor={idName} style={screenStyle}>
+      <Component />
     </div>
   );
 };

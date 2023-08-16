@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { BsFillBellFill } from 'react-icons/bs';
-// import musicImg from './music.png';
 
 const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -37,15 +36,15 @@ const MusicPlayer = () => {
   }, []);
 
   const svgStyle = {
-    color: 'var(--gray-color)',
-    width: '30px',
-    height: '35px',
+    color: 'var(--yellow-color)',
+    width: '28px',
+    height: '28px',
   };
 
   const containerStyle = {
     position: 'fixed',
-    top: '20px',
-    right: '20px',
+    top: '12px',
+    right: '10px',
     cursor: 'pointer',
     zIndex: '8888',
   };

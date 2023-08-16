@@ -70,7 +70,6 @@ const Footer = () => {
 
 // export default Footer;
 export default AppWrap(
-  MotionWrap(Footer, 'app__footer'),
+  MotionWrap(Footer),
   'contact',
-  'app__whitebg',
 );

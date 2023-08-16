@@ -82,18 +82,27 @@
 }
 
 .app__navbar-menu {
+  z-index: 500;
   width: 35px;
   height: 35px;
-  right: 32px;
-  bottom: 16px;
+  right: 10px;
+  bottom: 10px;
   border-radius: 50%;
   position: fixed;
+  cursor: pointer;
 
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--secondary-color);
 
+  &:hover {
+    background-color: var(--white-color);
+
+    svg {
+      color: var(--gray-color);
+    }
+  }
 
   svg {
     width: 70%;

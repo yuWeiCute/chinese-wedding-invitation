@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import './Main.scss';
 import './App.scss';
 import { Navbar, Music, SocialMedia, NavigationDots } from '../components';
 import { Header, About, Footer, Date, Location } from './index';
@@ -50,16 +49,6 @@ const Main = () => {
     };
   }, []);
 
-  const PicXiStyle = {
-    position: 'fixed',
-    top: '6%',
-    left: '50%',
-    marginLeft: '-30px', // 通过负边距使得图片在中间
-    width: '60px',
-    height: '60px',
-    zIndex: '120',
-  };
-
   const scale = 1 + (position.y * 0.012) > 0.05 ? 1 + position.y * 0.012 : 0.05;
 
   const mainStyle = {
@@ -69,19 +58,12 @@ const Main = () => {
     scrollSnapType: 'y mandatory',
   };
 
-  const screenStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    scrollSnapAlign: 'start',
-  };
-
   return (
-    <div>
+    <>
       <motion.img
         src={Xi}
         alt="囍"
-        style={PicXiStyle}
+        className="picXiStyle"
         initial={{ x: 0, y: 0, scale: 1 }} // 初始缩放比例为1
         animate={{ x: position.x, y: position.y, scale }} // 动画属性包括x、y的位置和scale的缩放
         transition={{ type: 'spring', stiffness: 100, damping: 20 }}
@@ -91,45 +73,13 @@ const Main = () => {
       <Music />
       <SocialMedia />
       <div ref={scrollableRef} style={mainStyle} className="app">
-        {/* <Navbar /> */}
-        {/* 三个画面 */}
-        <div
-          key="div1"
-          id="home"
-          data-anchor="div1"
-          className="screen"
-          style={{ ...screenStyle, height: '100vh' }}
-        >
-          {/* 111 */}
-          <Header className="screen" />
-        </div>
-        <div
-          key="div2"
-          id="about"
-          data-anchor="div2"
-          className="screen"
-          style={{ ...screenStyle, height: '100vh' }}
-        >
-          {/* 222 */}
-          <About />
-        </div>
-        <div
-          key="div3"
-          id="date"
-          data-anchor="div3"
-          className="screen"
-          style={{ ...screenStyle, height: '100vh' }}
-        >
-          <Date />
-        </div>
-        <div className="screen" id="location" style={{ ...screenStyle, height: '100vh' }}>
-          <Location />
-        </div>
-        <div className="screen" id="contact" style={{ ...screenStyle, height: '100vh' }}>
-          <Footer />
-        </div>
+        <Header />
+        <About />
+        <Date />
+        <Location />
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 

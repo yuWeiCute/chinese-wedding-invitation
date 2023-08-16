@@ -14,7 +14,7 @@ const Navbar = () => {
         return '主页';
       case 'about':
         return '关于';
-      case 'time':
+      case 'date':
         return '时间';
       case 'location':
         return '地点';
@@ -49,7 +49,7 @@ const Navbar = () => {
         >
           <HiX onClick={() => setToggle(false)} />
           <ul>
-            {['home', 'about', 'time', 'location', 'contact'].map((item) => (
+            {['home', 'about', 'date', 'location', 'contact'].map((item) => (
               <li key={item}>
                 <a href={`#${item}`} onClick={() => setToggle(false)}>
                   {getChineseText(item)}
