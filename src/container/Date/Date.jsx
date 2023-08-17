@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import ReactTooltip from 'react-tooltip';
 import { images } from '../../constants';
 import { Flower } from '../../components';
 import { AppWrap, MotionWrap } from '../../wrapper';
-import { client } from '../../client';
 import './Date.scss';
 
 const scaleVariants = {
@@ -19,8 +18,36 @@ const scaleVariants = {
 };
 
 const Date = () => {
-  const [experiences, setExperiences] = useState([]);
+  const time = [
+    {
+      works: [
+        {
+          desc: 'Tongji University-politecnico di Torino-universita di Firenze-universita di Pavia International Joint Design Workshop',
+          name: '迎宾时间',
+        },
+      ],
+      year: '11.08',
+    },
+    {
+      works: [
+        {
+          desc: 'Tongji University-politecnico di Torino-universita di Firenze-universita di Pavia International Joint Design Workshop',
+          name: '婚礼仪式',
+        },
+      ],
+      year: '11.36',
+    },
+    {
+      works: [
+        {
+          desc: 'Tongji University-politecnico di Torino-universita di Firenze-universita di Pavia International Joint Design Workshop',
+          name: '酒宴开席',
+        },
+      ],
+      year: '12.08',
+    },
 
+  ];
   const generateListItems = (totalDay, firstDay, myDay) => {
     const items = [];
     for (let i = 0; i < firstDay; i += 1) {
@@ -35,15 +62,6 @@ const Date = () => {
     }
     return items;
   };
-
-  useEffect(() => {
-    const query = '*[_type == "experiences"]';
-
-    client.fetch(query).then((data) => {
-      // console.log(data);
-      setExperiences(data);
-    });
-  }, []);
 
   return (
     <>
@@ -116,7 +134,7 @@ const Date = () => {
       {/* <Calendar onChange={onChange} value={value} /> */}
       <div className="app__date-container">
         <div className="app__date-exp">
-          {experiences.map((experience) => (
+          {time.map((experience) => (
             <motion.div
               className="app__date-exp-item"
               key={experience.year}
@@ -125,26 +143,25 @@ const Date = () => {
                 <p className="bold-text">{experience.year}</p>
               </div>
               <motion.div className="app__date-exp-works">
-                {experience.works.map((time) => (
-                  <div key={`${time.name}aa`}>
+                {experience.works.map((activity) => (
+                  <div key={`${activity.name}aa`}>
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
                       className="app__date-exp-time"
                       data-tip
-                      data-for={time.name}
-                      key={time.name}
+                      data-for={activity.name}
+                      key={activity.name}
                     >
-                      <h4 className="bold-text">{time.name}</h4>
-                      <p className="p-text">{time.company}</p>
+                      <h4 className="bold-text">{activity.name}</h4>
                     </motion.div>
                     <ReactTooltip
-                      id={time.name}
+                      id={activity.name}
                       effect="solid"
                       arrowColor="#fff"
                       className="location-tooltip"
                     >
-                      {time.desc}
+                      {activity.desc}
                     </ReactTooltip>
                   </div>
                 ))}
