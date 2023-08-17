@@ -145,20 +145,20 @@
 
 .picXiStyle {
   position: fixed;
-  top: 6%;
+  // top: 6%;
   left: 50%;
   margin-left: -30px;
+  margin-bottom: -30px;
   width: 60px;
   height: 60px;
   z-index: 120;
+  // @media screen and (max-width: 400px) {
+  //   top: 8%;
+  // }
 
-  @media screen and (max-width: 400px) {
-    top: 8%;
-  }
-
-  @media screen and (max-width: 340px) {
-    top: 11%;
-  }
+  // @media screen and (max-width: 340px) {
+  //   top: 11%;
+  // }
 }
 
 ;

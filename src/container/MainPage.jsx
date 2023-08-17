@@ -1,26 +1,25 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
 import './App.scss';
-import { Navbar, Music, SocialMedia, NavigationDots } from '../components';
+import { Navbar, Music, SocialMedia, NavigationDots, DoubleXi } from '../components';
 import { Header, About, Footer, Date, Location } from './index';
-import Xi from './doubXi.gif';
 
 const Main = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  // const mainRef = useRef(null);
+  const [scrollY, setScrollY] = useState(0);
   const scrollableRef = useRef(null);
 
   const [sections] = useState(['home', 'about', 'date', 'location', 'contact']);
   const [currentSection, setCurrentSection] = useState(sections[0]);
 
+  const [parentValue, setParentValue] = useState(200);
+
+  const handleChildValueChange = (newValue) => {
+    setParentValue(newValue);
+  };
+
   const handleScroll = () => {
     requestAnimationFrame(() => {
-      const scrollY = scrollableRef.current.scrollTop;
-      const viewportHeight = window.innerHeight;
-      const viewportWidth = window.innerWidth;
-      const newY = Math.max(-scrollY, -viewportHeight * 0.06 - 5);
-      const newX = Math.max(-scrollY, -viewportWidth * 0.5 + 25);
-      setPosition({ x: newX, y: newY });
+      const newY = scrollableRef.current.scrollTop;
+      setScrollY(newY);
     });
   };
 
@@ -41,15 +40,12 @@ const Main = () => {
     const scrollableElement = scrollableRef.current;
     scrollableElement.addEventListener('scroll', handleScroll);
     handlePageID(); // Initialize the current section based on the initial scroll position
-
     scrollableElement.addEventListener('scroll', handlePageID);
     return () => {
       scrollableElement.removeEventListener('scroll', handleScroll);
       scrollableElement.removeEventListener('scroll', handlePageID);
     };
   }, []);
-
-  const scale = 1 + (position.y * 0.012) > 0.05 ? 1 + position.y * 0.012 : 0.05;
 
   const mainStyle = {
     overflow: 'scroll',
@@ -60,25 +56,19 @@ const Main = () => {
 
   return (
     <>
-      <motion.img
-        src={Xi}
-        alt="囍"
-        className="picXiStyle"
-        initial={{ x: 0, y: 0, scale: 1 }} // 初始缩放比例为1
-        animate={{ x: position.x, y: position.y, scale }} // 动画属性包括x、y的位置和scale的缩放
-        transition={{ type: 'spring', stiffness: 100, damping: 20 }}
-      />
       <NavigationDots active={currentSection} />
       <Navbar />
       <Music />
+      {/* <p>Value from child: {parentValue}</p> */}
       <SocialMedia />
       <div ref={scrollableRef} style={mainStyle} className="app">
-        <Header />
+        <Header onChildValueChange={handleChildValueChange} />
         <About />
         <Date />
         <Location />
         <Footer />
       </div>
+      <DoubleXi scrollY={scrollY} parentValue={parentValue} />
     </>
   );
 };

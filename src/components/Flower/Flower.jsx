@@ -21,7 +21,7 @@ const Flower = ({ rotationSpeed, imageUrl }) => {
     <motion.div
       style={containerStyle}
       animate={{ rotate: 360 }} // 旋转动画，绕中心点旋转360度
-      transition={{ loop: Infinity, ease: 'linear', duration: rotationSpeed }} // 使用父组件传递的旋转速度
+      transition={{ repeat: Infinity, repeatType: 'loop', ease: 'linear', duration: rotationSpeed }} // 使用父组件传递的旋转速度
     >
       <img src={imageUrl} alt="Rotating Flower" style={imageStyle} />
     </motion.div>

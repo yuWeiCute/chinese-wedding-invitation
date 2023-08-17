@@ -18,16 +18,16 @@ const scaleVariants = {
 };
 
 const Location = () => {
-  const latitude = 28.678541;
-  const longitude = 115.805838;
+  // const latitude = 28.678541;
+  // const longitude = 115.805838;
   const mapCenter = { longitude: 115.805838, latitude: 28.678541 };
   const markerPosition = { longitude: 115.805838, latitude: 28.678541 };
   const mapPlugins = ['ToolBar'];
 
-  const openMapApp = () => {
-    const mapUrl = `https://uri.amap.com/marker?position=${longitude},${latitude}&name=标注位置&src=e65f9f97072c92b72bcd6aef75936b25`;
-    window.location.href = mapUrl;
-  };
+  // const openMapApp = () => {
+  //   const mapUrl = `https://uri.amap.com/marker?position=${longitude},${latitude}&name=标注位置&src=e65f9f97072c92b72bcd6aef75936b25`;
+  //   window.location.href = mapUrl;
+  // };
 
   return (
     <>
@@ -67,7 +67,7 @@ const Location = () => {
           transition={{ duration: 1.2, delayChildren: 0.5 }}
         >
           <Map mapStyle="fresh" plugins={mapPlugins} center={mapCenter} zoom={6}>
-            <Marker position={markerPosition} events={{ click: openMapApp }} />
+            <Marker position={markerPosition} />
           </Map>
         </motion.div>
       </motion.div>

@@ -27,18 +27,6 @@ const Navbar = () => {
 
   return (
     <nav>
-      {/* <div className="app__navbar-logo">
-        <img src={images.logo} alt="logo" />
-      </div> */}
-      {/* <ul className="app__navbar-links">
-        {['home', 'about', 'time', 'location', 'contact'].map((item) => (
-          <li className="app__flex p-text" key={`link-${item}`}>
-            <div />
-            <a href={`#${item}`}>{item}</a>
-          </li>
-        ))}
-      </ul> */}
-
       <div className="app__navbar-menu">
         <HiMenuAlt4 onClick={() => setToggle(true)} />
 
@@ -51,7 +39,7 @@ const Navbar = () => {
           <ul>
             {['home', 'about', 'date', 'location', 'contact'].map((item) => (
               <li key={item}>
-                <a href={`#${item}`} onClick={() => setToggle(false)}>
+                <a key={`${item}aa`} href={`#${item}`} onClick={() => setToggle(false)}>
                   {getChineseText(item)}
                 </a>
               </li>

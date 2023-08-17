@@ -28,7 +28,7 @@ const Date = () => {
     }
     for (let k = 1; k <= totalDay; k += 1) {
       if (k === myDay) {
-        items.push(<li key={`${k}a`}><p className="greenbox"><p>{k}</p></p></li>);
+        items.push(<li key={`${k}a`}><span className="greenbox"><p>{k}</p></span></li>);
       } else {
         items.push(<li className="lightgrey" key={`${k}a`}>{k}</li>);
       }
@@ -126,7 +126,7 @@ const Date = () => {
               </div>
               <motion.div className="app__date-exp-works">
                 {experience.works.map((time) => (
-                  <>
+                  <div key={`${time.name}aa`}>
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
@@ -146,7 +146,7 @@ const Date = () => {
                     >
                       {time.desc}
                     </ReactTooltip>
-                  </>
+                  </div>
                 ))}
               </motion.div>
             </motion.div>
