@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import ReactTooltip from 'react-tooltip';
 import { images } from '../../constants';
 import { Flower } from '../../components';
 import { AppWrap, MotionWrap } from '../../wrapper';
@@ -18,36 +17,6 @@ const scaleVariants = {
 };
 
 const Date = () => {
-  const time = [
-    {
-      works: [
-        {
-          desc: 'Tongji University-politecnico di Torino-universita di Firenze-universita di Pavia International Joint Design Workshop',
-          name: '迎宾时间',
-        },
-      ],
-      year: '11.08',
-    },
-    {
-      works: [
-        {
-          desc: 'Tongji University-politecnico di Torino-universita di Firenze-universita di Pavia International Joint Design Workshop',
-          name: '婚礼仪式',
-        },
-      ],
-      year: '11.36',
-    },
-    {
-      works: [
-        {
-          desc: 'Tongji University-politecnico di Torino-universita di Firenze-universita di Pavia International Joint Design Workshop',
-          name: '酒宴开席',
-        },
-      ],
-      year: '12.08',
-    },
-
-  ];
   const generateListItems = (totalDay, firstDay, myDay) => {
     const items = [];
     for (let i = 0; i < firstDay; i += 1) {
@@ -129,47 +98,23 @@ const Date = () => {
         </motion.div>
       </motion.div>
 
-      {/* <h2 className="head-text">Date & Experiences</h2> */}
+      <h2 className="head-text">Date & Experiences</h2>
 
-      {/* <Calendar onChange={onChange} value={value} /> */}
-      <div className="app__date-container">
-        <div className="app__date-exp">
-          {time.map((experience) => (
-            <motion.div
-              className="app__date-exp-item"
-              key={experience.year}
-            >
-              <div className="app__date-exp-year">
-                <p className="bold-text">{experience.year}</p>
-              </div>
-              <motion.div className="app__date-exp-works">
-                {experience.works.map((activity) => (
-                  <div key={`${activity.name}aa`}>
-                    <motion.div
-                      whileInView={{ opacity: [0, 1] }}
-                      transition={{ duration: 0.5 }}
-                      className="app__date-exp-time"
-                      data-tip
-                      data-for={activity.name}
-                      key={activity.name}
-                    >
-                      <h4 className="bold-text">{activity.name}</h4>
-                    </motion.div>
-                    <ReactTooltip
-                      id={activity.name}
-                      effect="solid"
-                      arrowColor="#fff"
-                      className="location-tooltip"
-                    >
-                      {activity.desc}
-                    </ReactTooltip>
-                  </div>
-                ))}
-              </motion.div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+      <motion.div
+        className="app__date-container"
+        whileInView={{ opacity: [0, 1] }}
+        transition={{ duration: 0.5 }}
+      >
+        <span>
+          <p className="time spacing">11:08</p><p className="line"> | </p><p className="act">迎宾时刻</p>
+        </span>
+        <span>
+          <p className="time spacing">11:36</p><p className="line"> | </p><p className="act">婚礼仪式</p>
+        </span>
+        <span>
+          <p className="time">12:08</p><p className="line"> | </p><p className="act">酒宴开席</p>
+        </span>
+      </motion.div>
     </>
   );
 };

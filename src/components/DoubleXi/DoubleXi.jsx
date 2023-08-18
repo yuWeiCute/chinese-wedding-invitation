@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Xi from './doubXi.gif';
+import { images } from '../../constants';
 
 const DoubleXi = ({ scrollY, parentValue }) => {
   const viewportWidth = window.innerWidth;
@@ -12,7 +12,7 @@ const DoubleXi = ({ scrollY, parentValue }) => {
 
   return (
     <motion.img
-      src={Xi}
+      src={images.doubleXi}
       alt="囍"
       style={{ top: parentValue }}
       className="picXiStyle"
