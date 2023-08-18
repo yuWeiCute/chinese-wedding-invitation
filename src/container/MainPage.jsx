@@ -10,10 +10,11 @@ const Main = () => {
   const [sections] = useState(['home', 'about', 'date', 'location', 'contact']);
   const [currentSection, setCurrentSection] = useState(sections[0]);
 
-  const [parentValue, setParentValue] = useState(200);
+  const [parentValue, setParentValue] = useState(null);
 
   const handleChildValueChange = (newValue) => {
     setParentValue(newValue);
+    console.log(parentValue);
   };
 
   const handleScroll = () => {
@@ -36,7 +37,9 @@ const Main = () => {
     }
   };
 
+  console.log(parentValue);
   useEffect(() => {
+    console.log(parentValue);
     const scrollableElement = scrollableRef.current;
     scrollableElement.addEventListener('scroll', handleScroll);
     handlePageID(); // Initialize the current section based on the initial scroll position
@@ -56,6 +59,7 @@ const Main = () => {
 
   return (
     <>
+      <div className="centered-square" />
       <NavigationDots active={currentSection} />
       <Navbar />
       <Music />
@@ -68,7 +72,7 @@ const Main = () => {
         <Location />
         <Footer />
       </div>
-      <DoubleXi scrollY={scrollY} parentValue={parentValue} />
+      {parentValue && <DoubleXi scrollY={scrollY} parentValue={parentValue} />}
     </>
   );
 };

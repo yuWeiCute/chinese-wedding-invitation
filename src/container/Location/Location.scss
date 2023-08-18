@@ -10,7 +10,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    
+
     .circle-cmp {
       position: absolute;
     }
@@ -46,4 +46,45 @@
   height: calc(100% + 14px);
   background: linear-gradient(to top right, var(--yellow-color), var(--lightGray-color));
   z-index: 1;
+}
+
+
+#containerMap {
+  width: 100%;
+  height: 100%;
+  a {
+    img {
+      display: none !important;
+    }
+  }
+  canvas{
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+.logo-text {
+  display: none !important;
+}
+
+button {
+  z-index: 5;
+  padding: 1rem 3.25rem;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--secondary-color);
+
+  font-weight: 500;
+  color: var(--white-color);
+  outline: none;
+  margin: 2rem 0 0 0;
+  font-family: var(--font-base);
+
+  transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  cursor: pointer;
+
+  &:hover {
+    background-color: white;
+    color: var(--secondary-color);
+  }
 }

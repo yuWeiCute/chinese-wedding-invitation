@@ -56,7 +56,7 @@ const Date = () => {
           <div className="circle-cmp" style={{ zIndex: '99', width: '32%', bottom: '-17%', right: '-12%' }}>
             <Flower rotationSpeed={20} imageUrl={images.flowerRed} />
           </div>
-          <div className="circle-cmp" style={{ zIndex: '0', width: '28%', bottom: '-14%', right: '7%' }}>
+          <div className="circle-cmp" style={{ zIndex: '0', width: '28%', bottom: '-12%', right: '7%' }}>
             <Flower rotationSpeed={25} imageUrl={images.flowerYellow} />
           </div>
           <div className="circle-cmp" style={{ zIndex: '99', width: '10%', bottom: '20%', right: '-7%' }}>
@@ -97,8 +97,9 @@ const Date = () => {
           </div>
         </motion.div>
       </motion.div>
-
-      <h2 className="head-text">Date & Experiences</h2>
+      <br />
+      <p className="light-text">时间：2023年9月16</p>
+      <p className="light-text">农历八月初二 星期六</p>
 
       <motion.div
         className="app__date-container"

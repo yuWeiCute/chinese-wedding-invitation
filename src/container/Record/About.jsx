@@ -41,15 +41,15 @@ const About = () => {
           height="100%"
           poster={images.Gwgvv}
         >
-          <source src="https://abcccccvideo-1318392306.cos.ap-shanghai.myqcloud.com/2db0da47553066615ca955112f5b812e.mp4" type="video/mp4" />
+          <source src="https://111111video-1318392306.cos.ap-shanghai.myqcloud.com/2db0da47553066615ca955112f5b812e.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </motion.div>
       <br />
       <h2 className="head-text">彩线牵缘幸会初</h2>
       <h2 className="head-text">笑看流年岁月添</h2>
-      <p className="p-text">今宵明朗结良缘，相约豫章庆盛年。</p>
-      <p className="bold-text">静待光临</p>
+      {/* <p className="p-text">今宵明朗结良缘，相约豫章庆盛年。</p> */}
+      {/* <p className="light-text">静待光临</p> */}
     </>
   );
 };

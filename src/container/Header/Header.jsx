@@ -25,7 +25,6 @@ const Header = ({ onChildValueChange }) => {
     if (imgRef.current) {
       const element = imgRef.current;
       const rect = element.getBoundingClientRect();
-      console.log(rect);
       const distanceFromTop = rect.top;
       onChildValueChange(distanceFromTop - 230); // 调用父组件传递的回调函数，将值传递给父组件
     }
@@ -84,9 +83,9 @@ const Header = ({ onChildValueChange }) => {
       <BsChevronDown />
       <div className="circle-container" />
       <h2 className="head-text">陈曦 & 江宇薇</h2>
-      <p className="bold-text">2023 年 9 月 16 日</p>
+      <p className="light-text">2023 年 9 月 16 日</p>
       <p className="p-text">今宵明朗结良缘，相约豫章庆盛年。</p>
-      <p className="bold-text">静待光临</p>
+      <p className="light-text">静待光临</p>
     </div>
   );
 };

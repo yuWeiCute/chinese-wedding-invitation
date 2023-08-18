@@ -39,10 +39,12 @@
     p {
       font-weight: 500;
     }
+
     a {
       text-decoration: none;
       font-weight: 500;
     }
+
     &:hover {
       box-shadow: 0 0 25px #fef4f5;
     }
@@ -66,40 +68,53 @@
 }
 
 .app__footer-form {
-  width: 60%;
   flex-direction: column;
   margin: 1rem 2rem;
 
-  div {
-    width: 100%;
-
-    margin: 0.75rem 0;
-    border-radius: 10px;
+  input,
+  textarea {
+    width: 70vw;
+    
+    // margin: 0.75rem 0;
+    // border-radius: 10px;
     cursor: pointer;
-    background-color: var(--primary-color);
+    background-color: var(--white-color);
 
     transition: all 0.3s ease-in-out;
+    padding: 0.95rem;
+    border: none;
+    border-radius: 7px;
+    font-family: var(--font-base);
+    color: var(--secondary-color);
+    outline: none;
+    // input,
+    // textarea {
+    //   width: 100%;
+    //   padding: 0.95rem;
+    //   border: none;
+    //   border-radius: 7px;
+    //   background-color: var(--primary-color);
 
-    input,
-    textarea {
-      width: 100%;
-      padding: 0.95rem;
-      border: none;
-      border-radius: 7px;
-      background-color: var(--primary-color);
+    //   font-family: var(--font-base);
+    //   color: var(--secondary-color);
+    //   outline: none;
+    // }
 
-      font-family: var(--font-base);
-      color: var(--secondary-color);
-      outline: none;
-    }
+    // textarea {
+    //   height: 170px;
+    // }
 
-    textarea {
-      height: 170px;
-    }
+    // &:hover {
+    //   box-shadow: 0 0 25px var(--primary-color);
+    // }
+  }
 
-    &:hover {
-      box-shadow: 0 0 25px var(--primary-color);
-    }
+  textarea {
+    height: 100px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 25px var(--primary-color);
   }
 
   button {
@@ -118,7 +133,8 @@
     cursor: pointer;
 
     &:hover {
-      background-color: #2430af;
+      background-color: white;
+      color: var(--secondary-color);
     }
   }
 

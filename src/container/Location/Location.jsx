@@ -28,7 +28,7 @@ const Location = () => {
       const map = new window.TMap.Map('containerMap', {
         draggable: false, // 不允许拖拽地图
         center: centerLngLat, // 设置中心点经纬度
-        mapStyleId: 'style1',
+        mapStyleId: 'style7',
       });
       // eslint-disable-next-line no-unused-vars
       const marker = new window.TMap.MultiMarker({
@@ -52,6 +52,7 @@ const Location = () => {
       });
       map.removeControl(window.TMap.constants.DEFAULT_CONTROL_ID.SCALE); // 隐藏比例尺控件
       map.removeControl(window.TMap.constants.DEFAULT_CONTROL_ID.ROTATION); // 隐藏旋转控件
+      // map.removeControl(window.TMap.constants.DEFAULT_CONTROL_ID.TEXT); // 隐藏旋转控件
       mapRef.current = map;
     });
   };
@@ -124,10 +125,16 @@ const Location = () => {
         <input type="button" />
       </motion.div>
       <div className="circle-container" />
-      <h2 className="head-text">陈曦 & 江宇薇</h2>
-      <p className="bold-text">2023 年 9 月 16 日</p>
-      <p className="p-text">今宵明朗结良缘，相约豫章庆盛年。</p>
-      <p className="bold-text">静待光临</p>
+      <br />
+      <button type="button" className="p-text" onClick={handleButtonClick}>点击打开地图导航</button>
+      <div>
+        <p className="p-text">席设：万嘉盛宴-千禧</p>
+        <p className="p-text">
+          地址：江西省南昌市新建区长堎
+          <br />
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 大道1333号7号楼5楼
+        </p>
+      </div>
     </>
   )
   // eslint-disable-next-line semi-style

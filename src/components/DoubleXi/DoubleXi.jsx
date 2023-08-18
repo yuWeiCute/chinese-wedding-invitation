@@ -14,7 +14,7 @@ const DoubleXi = ({ scrollY, parentValue }) => {
     <motion.img
       src={images.doubleXi}
       alt="囍"
-      style={{ top: parentValue }}
+      style={{ top: parentValue > 10 ? parentValue : 10 }}
       className="picXiStyle"
       initial={{ x: 0, y: 0, scale: 1 }} // 初始缩放比例为1
       animate={{ x: position.x, y: position.y, scale }} // 动画属性包括x、y的位置和scale的缩放

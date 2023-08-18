@@ -22,7 +22,7 @@ const App = () => {
         setLoading(false);
         clearInterval(timer);
       }
-    }, 5); // 50ms模拟一步加载
+    }, 10); // 50ms模拟一步加载
 
     // 清除计时器
     return () => clearInterval(timer);

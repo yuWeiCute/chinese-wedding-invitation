@@ -34,3 +34,20 @@
     width: 100%,
   }
 }
+
+#home{
+  svg{
+    color: var(--yellow-color);
+    width: 3rem;
+    height: 3rem;
+    stroke: var(--yellow-color); /* 描边颜色 */
+    stroke-width: 0.3; /* 描边宽度 */
+  }
+
+  .circle-container {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background-color: var(--yellow-color); /* 设置圆点颜色 */
+  }
+}
