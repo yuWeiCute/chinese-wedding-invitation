@@ -8721,7 +8721,6 @@ __metadata:
     eslint-plugin-react-hooks: ^4.2.0
     framer-motion: ^6.2.3
     react: ^17.0.2
-    react-amap: ^1.2.8
     react-dom: ^17.0.2
     react-icons: ^4.3.1
     react-scripts: 5.0.0
@@ -10337,13 +10336,6 @@ __metadata:
     iconv-lite: 0.4.24
     unpipe: 1.0.0
   checksum: c6f8d6a75c65c0a047f888cb29efc97f60fb36e950ba2cb31fefce694f98186e844a03367920faa7dc5bffaf33df08aee0b9dd935280e366439fa6492a5b163e
-  languageName: node
-  linkType: hard
-
-"react-amap@npm:^1.2.8":
-  version: 1.2.8
-  resolution: "react-amap@npm:1.2.8"
-  checksum: 3d4a519491a59acb7c97487d2313804331c7113e3203c1b09323e4510e52b7e204c3a8512e5791111ec86a9a1fa3075e4f9b87bf23e6b082a51bbbf6951625e3
   languageName: node
   linkType: hard
 
