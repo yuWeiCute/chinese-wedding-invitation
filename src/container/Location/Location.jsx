@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Map, Marker } from 'react-amap';
+// import { Map, Marker } from 'react-amap';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { images } from '../../constants';
 import { Flower } from '../../components';
@@ -17,19 +17,20 @@ const scaleVariants = {
   },
 };
 
-const Location = () => {
-  // const latitude = 28.678541;
-  // const longitude = 115.805838;
-  const mapCenter = { longitude: 115.805838, latitude: 28.678541 };
-  const markerPosition = { longitude: 115.805838, latitude: 28.678541 };
-  const mapPlugins = ['ToolBar'];
+const Location = () =>
+// const latitude = 28.678541;
+// const longitude = 115.805838;
+// const mapCenter = { longitude: 115.805838, latitude: 28.678541 };
+// const markerPosition = { longitude: 115.805838, latitude: 28.678541 };
+// const mapPlugins = ['ToolBar'];
 
-  // const openMapApp = () => {
-  //   const mapUrl = `https://uri.amap.com/marker?position=${longitude},${latitude}&name=标注位置&src=e65f9f97072c92b72bcd6aef75936b25`;
-  //   window.location.href = mapUrl;
-  // };
+// const openMapApp = () => {
+//   const mapUrl = `https://uri.amap.com/marker?position=${longitude},${latitude}&name=标注位置&src=e65f9f97072c92b72bcd6aef75936b25`;
+//   window.location.href = mapUrl;
+// };
 
-  return (
+  // eslint-disable-next-line implicit-arrow-linebreak
+  (
     <>
       <motion.div
         whileInView={{ opacity: [0, 1] }}
@@ -60,7 +61,7 @@ const Location = () => {
             <Flower rotationSpeed={30} imageUrl={images.flowerWhite} />
           </div>
         </motion.div>
-        <motion.div
+        {/* <motion.div
           style={{ zIndex: 3, width: '100%', height: '100%' }}
           alt="profile_bg"
           whileInView={{ opacity: [0, 1] }}
@@ -69,7 +70,7 @@ const Location = () => {
           <Map mapStyle="fresh" plugins={mapPlugins} center={mapCenter} zoom={6}>
             <Marker position={markerPosition} />
           </Map>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
       <div className="circle-container" />
       <h2 className="head-text">陈曦 & 江宇薇</h2>
@@ -77,8 +78,9 @@ const Location = () => {
       <p className="p-text">今宵明朗结良缘，相约豫章庆盛年。</p>
       <p className="bold-text">静待光临</p>
     </>
-  );
-};
+  )
+// eslint-disable-next-line semi-style
+;
 
 // export default Location;
 
