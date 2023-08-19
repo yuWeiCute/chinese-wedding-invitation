@@ -41,7 +41,7 @@ const About = () => {
           height="100%"
           poster={images.Gwgvv}
         >
-          <source src="https://111111video-1318392306.cos.ap-shanghai.myqcloud.com/2db0da47553066615ca955112f5b812e.mp4" type="video/mp4" />
+          <source src="https://11111video-1318392306.cos.ap-shanghai.myqcloud.com/2db0da47553066615ca955112f5b812e.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </motion.div>

@@ -16,13 +16,18 @@
     width: 320px;
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 780px) {
     width: 220px;
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 480px) {
+    width: 220px;
+  }
+
+  @media screen and (max-width: 370px) {
     width: 55%;
   }
+
   span {
     width: 100%;
     display: flex;
@@ -48,7 +53,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 450px;
+  width: 480px;
 
   .app__header-circles {
     position: absolute;
@@ -67,11 +72,15 @@
     width: 420px;
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 780px) {
     width: 320px;
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 480px) {
+    width: 320px;
+  }
+
+  @media screen and (max-width: 370px) {
     width: 75%;
   }
 

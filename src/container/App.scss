@@ -3,9 +3,20 @@
   background-color: var(--primary-color);
   font-family: var(--font-base);
   background: url("../assets/bgIMG.jpg");
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
   background-repeat: repeat;
+
+  @media screen and (max-width: 780px) {
+    background: url("../assets/bgIMG780.jpg");
+    background-size: contain;
+    background-repeat: repeat;
+  }
+
+  @media screen and (max-width: 480px) {
+    background: url("../assets/bgIMG480.jpg");
+    background-size: contain;
+    background-repeat: repeat;
+  }
 }
 
 h1,
@@ -40,7 +51,7 @@ p {
     font-size: 4rem;
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 480px) {
     font-size: 2rem;
   }
 }
@@ -69,7 +80,7 @@ p {
     font-size: 2rem;
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 480px) {
     font-size: 0.9rem;
   }
 }
@@ -174,7 +185,7 @@ p {
 }
 
 .centered-square {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -191,11 +202,15 @@ p {
     width: 400px;
   }
 
-  @media screen and (max-width: 1200px) {
-    width:300px;
+  @media screen and (max-width: 780px) {
+    display: none;
   }
 
-  @media screen and (max-width: 450px) {
-    width: 72%;
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 370px) {
+    display: none;
   }
 }
