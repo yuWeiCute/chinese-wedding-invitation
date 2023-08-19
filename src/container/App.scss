@@ -2,18 +2,18 @@
   z-index: 1;
   background-color: var(--primary-color);
   font-family: var(--font-base);
-  background: url("../assets/bgIMG.jpg");
+  background: url("../assets/bgIMG.webp");
   background-size: contain;
   background-repeat: repeat;
 
   @media screen and (max-width: 780px) {
-    background: url("../assets/bgIMG780.jpg");
+    background: url("../assets/bgIMG780.webp");
     background-size: contain;
     background-repeat: repeat;
   }
 
   @media screen and (max-width: 480px) {
-    background: url("../assets/bgIMG480.jpg");
+    background: url("../assets/bgIMG480.webp");
     background-size: contain;
     background-repeat: repeat;
   }
@@ -86,7 +86,7 @@ p {
 }
 
 .app__social {
-  position: fixed;
+  position: absolute;
   left: 10px;
   bottom: 10px;
   z-index: 500;
@@ -138,7 +138,7 @@ p {
 }
 
 .app__navigation {
-  position: fixed;
+  position: absolute;
   right: -6px;
   bottom: 50%;
   transform: translateY(50px);
@@ -147,7 +147,7 @@ p {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  z-index: 999;
+  z-index: 500;
   padding: 1rem;
 
   .app__navigation-dot {
@@ -167,7 +167,7 @@ p {
 
 
 .picXiStyle {
-  position: fixed;
+  position: absolute;
   // top: 6%;
   left: 50%;
   margin-left: -30px;
@@ -190,7 +190,7 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 430px;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(51, 3, 3, 0.1);
 
   /* 设置红色背景，透明度为0.5 */

@@ -36,7 +36,7 @@ const App = () => {
           <LoadingPage loadingProgress={loadingProgress} />
         ) : (
           // 加载完成后显示主页面
-          <LazyMainPage style={{ height: '100vh' }} />
+          <LazyMainPage style={{ height: '100%' }} />
         )}
       </Suspense>
     </div>

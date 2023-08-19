@@ -36,7 +36,7 @@ const Header = ({ onChildValueChange }) => {
     justifyContent: 'center',
     scrollSnapAlign: 'start',
     width: '100%',
-    height: '100vh',
+    height: '100%',
   };
 
   return (

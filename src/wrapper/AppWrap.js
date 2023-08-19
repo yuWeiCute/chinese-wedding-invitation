@@ -7,7 +7,7 @@ const AppWrap = (Component, idName) => function HOC() {
     justifyContent: 'center',
     scrollSnapAlign: 'start',
     width: '100%',
-    height: '100vh',
+    height: '100%',
   };
 
   return (

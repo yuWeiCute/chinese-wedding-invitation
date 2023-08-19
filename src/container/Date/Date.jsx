@@ -17,21 +17,23 @@ const scaleVariants = {
 };
 
 const Date = () => {
-  const generateListItems = (totalDay, firstDay, myDay) => {
-    const items = [];
-    for (let i = 0; i < firstDay; i += 1) {
-      items.push(<li key={i}> </li>); // 为起始日之前的日期创建空白节点
-    }
-    for (let k = 1; k <= totalDay; k += 1) {
-      if (k === myDay) {
-        items.push(<li key={`${k}a`}><span className="greenbox"><p>{k}</p></span></li>);
-      } else {
-        items.push(<li className="lightgrey" key={`${k}a`}>{k}</li>);
-      }
-    }
-    return items;
-  };
-
+  // const generateListItems = (totalDay, firstDay, myDay) => {
+  //   const items = [];
+  //   for (let i = 0; i < firstDay; i += 1) {
+  //     items.push(<li key={i}> </li>); // 为起始日之前的日期创建空白节点
+  //   }
+  //   for (let k = 1; k <= totalDay; k += 1) {
+  //     if (k === myDay) {
+  //       items.push(<li key={`${k}a`}><span className="greenbox"><p>{k}</p></span></li>);
+  //     } else {
+  //       items.push(<li className="lightgrey" key={`${k}a`}>{k}</li>);
+  //     }
+  //   }
+  //   return items;
+  // };
+  const date = 16;
+  // eslint-disable-next-line eqeqeq
+  if (date != 16)console.log(date);
   return (
     <>
       <motion.div
@@ -63,12 +65,20 @@ const Date = () => {
             <Flower rotationSpeed={30} imageUrl={images.flowerWhite} />
           </div>
         </motion.div>
+
         <motion.div
           className="calendar"
           whileInView={{ opacity: [0, 1] }}
           transition={{ duration: 1.2, delayChildren: 0.5 }}
         >
-          <div className="calendar__div" style={{ zIndex: 9, width: '100%', height: '100%' }}>
+          <motion.img
+            style={{ zIndex: 10 }}
+            src={images.date}
+            alt="date=16"
+            whileInView={{ opacity: [0, 1] }}
+            transition={{ duration: 1.2, delayChildren: 0.5 }}
+          />
+          {/* <div className="calendar__div" style={{ zIndex: 9, width: '100%', height: '100%' }}>
             <div className="title">
 
               <span className="calendar-year">2023</span>
@@ -94,7 +104,7 @@ const Date = () => {
                 <ul id="days" />
               </div>
             </div>
-          </div>
+          </div> */}
         </motion.div>
       </motion.div>
       <br />

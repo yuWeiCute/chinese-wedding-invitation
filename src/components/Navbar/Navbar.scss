@@ -11,7 +11,7 @@
   // backdrop-filter: blur(4px);
   // -webkit-backdrop-filter: blur(4px);
   // border: 1px solid rgba(255, 255, 255, 0.18);
-  position: fixed;
+  position: absolute;
   z-index: 2;
 }
 
@@ -88,7 +88,7 @@
   right: 10px;
   bottom: 10px;
   border-radius: 50%;
-  position: fixed;
+  position: absolute;
   cursor: pointer;
 
   display: flex;
@@ -120,7 +120,7 @@
     padding: 1rem;
 
     width: 80%;
-    height: 100vh;
+    height: 100%;
 
     display: flex;
     justify-content: center;
